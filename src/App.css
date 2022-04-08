@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,15 +13,128 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* ========== */
+
+.routeContainer {
+  width: 1400px;
+  margin: 50px auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.outputCurrency {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+/* win card game */
+.buttonCards {
+  width: 500px;
+  height: 200px;
+  margin: 10px 50px;
+  perspective: 600px;
+}
+
+.errorMessage {
+  color: red;
+  margin: 10px;
+  text-decoration: underline;
+}
+
+/* ========== */
+
+.card {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+.card.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: black;
+  font-weight: bold;
+  font-size: 25px;
+  backface-visibility: hidden;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__face--front {
+  background: transparent;
+}
+
+.card__face--back {
+  background: slateblue;
+  transform: rotateY(180deg);
+}
+
+.overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlayCenter {
+  width: 800px;
+  height: 450px;
+  background-color: white;
+  color: black;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.overlayCenter h1 {
+  text-decoration: underline;
+}
+
+.overlayCenter li {
+  list-style: none;
+  text-align: left;
+}
+
+.overlayCenter button {
+  margin: 0 20px;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 1rem;
+}
+
+.playAgain {
+  background-color: rgba(0, 128, 0, 0.5);
+}
+.playAgain:hover {
+  background-color: rgba(0, 128, 0, 0.8);
+  border: 2px solid rgba(0, 128, 0);
+  transform: scale(1.1);
+}
+
+.quit {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+.quit:hover {
+  background-color: rgba(255, 0, 0, 0.8);
+  border: 2px solid rgba(255, 0, 0);
+  transform: scale(1.2);
+}
+
+.componentContainer {
+  display: inline;
 }
